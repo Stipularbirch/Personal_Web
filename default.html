@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie-edge">
+		<link rel="stylesheet" href="Styles/style.dev.css" />
+		<title>Bor's Web</title>
+		<link rel="icon"  type="image/ico"  href="Images/webfavicon.ico"/>
+		<script src="JS/jQuery.min.js"></script>
+		<script src="JS/headerScroll.js"></script>
+		<script src="JS/masonry.pkgd.min.js"></script>
+	</head>
+	<body>
+		<section id="banner" class="fade-in">
+			<img  class="bottom" src="../Images/banner1a.webp"/>
+			<img  class="top" 	    src="../Images/banner1b.webp"/>
+			<article class="left-panel">
+				<div class="speech-bubble">
+					<p>Hi, my name is Boris.</p>
+				</div>
+			</article>
+		</section>
+		<section id="first">
+			<h1>About Me</h1>
+			<img id="profilePic" src="../Images/profilePic.webp"/>
+			<p>As a first generation immigrant from Uzbekistan, I appreciate my ability to work hard and be rewarded in America. Having had the opportunity to travel to various places, I enjoy 
+			learning about different cultures and sharing experiences with others. Appreciating a good challenge, I have become very versatile in the skills and knowledge that I possess both in my personal and professional life.<br><br>
+			Early in life, I was able to cultivate my natural leadership characteristics from attending a military academy as well as doing 2 years of Army ROTC. Knowing what it takes to be a good leader benefits me in all of my interpersonal
+			 relationships. Every opportunity to better myself is that much better when others can benefit together with me.<br><br>
+			 Initially I started my academic career in Criminal Justice, however I discovered my true passion was with programming as such I finished with a BS in Computer Science. I have always been fascinated with cybersecurity and learning about weaknesses in the code.
+			 Being able to program unlocks so many possibilities in everyday life, and I am a firm believer that everyone should know some rudimentary programming.  </p>
+		</section>
+		<section id="second">
+		<div class="grid cards">
+			<div class="grid-sizer"></div>
+			<div class="grid-item card">
+				<div class="face front"> 
+					<p>Programming Languages</p>
+				</div> 
+				<div class="face back hidden"> 
+					<p>Java: 4 years ~ 3 mobile app projects <br>
+					Python: 4 years ~ Selenium/Beautifulsoup4/Pytesseract/openCV<br>
+					C: 4 years ~ academic background <br>
+					C#: 6 months ~ PdfPig, .NET <br>
+					HTML/CSS/JS: 2 years ~ HTML5, PHP7, SASS, JS, jQuery, AJAX </p>
+				</div> 
+			</div>
+			<div class="grid-item card">
+				<div class="face front"> 
+					<p>Hardware Experience</p>
+				</div> 
+				<div class="face back hidden"> 
+					<p>NRF52832 ~ 3D tracking of an object, fall detection <br>
+					Arduino UNO ~ Personal projects, hobby<br>
+					Raspberry Pi 3B+ ~ Headless server, prototyping, FreePBX<br>
+					Intel Quark D2000 ~ Assembly lang. expirements, prototyping <br>
+				</div> 
+			</div>
+			<div class="grid-item card">
+				<div class="face front"> 
+					<p>Professional Experience</p>
+				</div> 
+				<div class="face back hidden"> 
+					<p>~ In house NoSQL DBMS creation <br>
+					~ On premisis file managment<br>
+					~ Website creation and maintance<br>
+					~ Various workplace analyses</p>
+				</div> 
+			</div>
+			<div class="grid-item card">
+				<div class="face front"> 
+					<p>Certifications</p>
+				</div> 
+				<div class="face back hidden"> 
+					<p>~ AWS Certified Cloud Practitioner<br>
+					~ SQL - MySQL for Data Analytics and Business Intelligence<br>
+				</div> 
+			</div>
+		</div>
+
+		</section>
+		<section id="footerGhost">
+			<div class="arrow bounce"></div>
+		</section>
+		<section id="footerStack"></section>
+		<footer>
+			<div id="a">
+				<p>Made with love and care by me! <br>
+					   Boris Bagryanskiy, the creator.</p>
+			</div>
+			<div id="b">
+				<a href = "resume.pdf">
+					<img src="Images/resume.svg" alt="resume svg, imagine it"/>
+				</a>
+			</div>
+			<div id="c">
+				<div id="cContentWrapper"><p>Lets Get Connected!</p>
+					<a href = "mailto: bagryanskiy.boris@gmail.com">bagryanskiy.boris@gmail.com</a><br>
+					<a href = "https://www.linkedin.com/in/borisbagry">	
+						<img src="Images/linkedin.svg" alt="linkedin svg, imagine it"/>
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" >
+			$('#footerGhost').one('mouseover', function() { $('#footerGhost').fadeOut('slow'); });
+			var $grid = $('.grid').masonry({
+				itemSelector: '.grid-item',
+				columnWidth: '.grid-sizer',
+				gutter: 20,
+				percentPosition: true
+			});
+			
+			$grid.on( 'click', '.card', function() {
+				$( this ).toggleClass('flipped');
+				$( '.front',  this ).toggleClass( 'hidden' );
+				$( '.front',  this ).find('p').toggleClass( 'hidden' );
+				$( '.back',  this ).toggleClass( 'hidden' );
+				$grid.masonry();
+			});
+
+		</script>
+		<script type="text/javascript" src="JS/edgeScrollCtrl.js"></script>
+	</body>
+</html>
